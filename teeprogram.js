@@ -12,4 +12,4 @@ stream.once('open', function(write) {
   stream.end();
 });
 
-console.log("Your input \"" + input + "\"\ has been written to output.txt.");
+console.log("Your input \"" + input + "\" has been written to output.txt.");
