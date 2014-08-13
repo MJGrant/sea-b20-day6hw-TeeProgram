@@ -6,8 +6,6 @@
 var fs = require('fs');
 var input = process.argv[2];
 
-
-
 var stream = fs.createWriteStream("output.txt");
 stream.once('open', function(write) {
   stream.write(input);
