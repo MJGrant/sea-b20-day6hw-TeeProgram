@@ -1,15 +1,10 @@
-//To use: 
-//$ node teeprogram.js "your string here"
-//"your string here" will be returned to the console and output to outputfile.txt
+//$ node teeprogram.js fileNameHere
+//any lines you enter will be displayed in the console and added to fileNameHere
+//exit program with ctrl + c
+
 'use strict';
 
 var fs = require('fs');
-var input = process.argv[2];
 
-var stream = fs.createWriteStream("output.txt");
-stream.once('open', function(write) {
-  stream.write(input);
-  stream.end();
-});
-
-console.log("Your input \"" + input + "\" has been written to output.txt.");
+process.stdin.pipe(process.stdout);
+process.stdin.pipe(fs.createWriteStream(process.argv[2]));
